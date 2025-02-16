@@ -57,13 +57,13 @@ function App() {
           </h1>
           <p className="lead subheading">Building Dynamic, Real-Time Platforms</p>
           <div className="social-links mt-4">
-            <a href="https://github.com" className="social-icon">
+            <a href="https://github.com/aman1521coder" className="social-icon">
               <FaGithub size={28} />
             </a>
-            <a href="https://linkedin.com/in/your-profile" className="social-icon">
+            <a href="https://www.linkedin.com/in/amanuel-esayase-8b941532b/" className="social-icon">
               <FaLinkedin size={28} />
             </a>
-            <a href="https://t.me/YourUsername" className="social-icon">
+            <a href="https://t.me/aman151515" className="social-icon">
               <FaTelegram size={28} />
             </a>
           </div>
