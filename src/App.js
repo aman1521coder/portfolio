@@ -53,9 +53,9 @@ function App() {
             className="profile-img mb-4"
           />
           <h1 className="mb-4 futuristic-heading">
-            Real-Time Auction Site Builder
+          Full stack developemnt
           </h1>
-          <p className="lead subheading">Building Dynamic, Real-Time Platforms</p>
+          <p className="lead subheading">Build systems with me</p>
           <div className="social-links mt-4">
             <a href="https://github.com/aman1521coder" className="social-icon">
               <FaGithub size={28} />
