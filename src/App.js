@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Navbar, Nav, Container, Card, Row, Col, Button } from 'react-bootstrap';
-import { FaGithub, FaLinkedin, FaTelegram, FaJs, FaMicrosoft } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaTelegram, FaJs, FaMicrosoft, FaSun, FaMoon } from 'react-icons/fa';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
@@ -8,6 +8,22 @@ import './App.css';
 import profilePic from './photo_2024-09-22_21-12-29.jpg'; // Adjust the path if necessary
 
 function App() {
+  const [isDarkMode, setIsDarkMode] = useState(true);
+
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark-theme');
+      document.documentElement.classList.remove('light-theme');
+    } else {
+      document.documentElement.classList.add('light-theme');
+      document.documentElement.classList.remove('dark-theme');
+    }
+  }, [isDarkMode]);
+
   const projects = [
     {
       title: "Real-Time Auction Site",
@@ -31,12 +47,15 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar bg="dark" variant="dark" expand="lg" fixed="top" className="navbar-blur">
+      <Navbar bg={isDarkMode ? "dark" : "light"} variant={isDarkMode ? "dark" : "light"} expand="lg" fixed="top" className="navbar-blur">
         <Container>
           <Navbar.Brand href="#home" className="gradient-text">Amanuel Esayase</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
+              <Nav.Link onClick={toggleTheme} className="theme-toggle">
+                {isDarkMode ? <FaSun size={20} /> : <FaMoon size={20} />}
+              </Nav.Link>
               <Nav.Link href="#skills">Expertise</Nav.Link>
               <Nav.Link href="#projects">Innovations</Nav.Link>
             </Nav>
@@ -53,7 +72,7 @@ function App() {
             className="profile-img mb-4"
           />
           <h1 className="mb-4 futuristic-heading">
-          Full stack developemnt
+            Full stack development
           </h1>
           <p className="lead subheading">Build systems with me</p>
           <div className="social-links mt-4">

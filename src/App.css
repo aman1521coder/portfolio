@@ -2,6 +2,12 @@
   --gradient-1: #6366f1;
   --gradient-2: #10b981;
   --neon-accent: #14f1d9;
+  --bg-color: #1a1a1a;
+  --text-color: #ffffff;
+  --navbar-bg: rgba(0, 0, 0, 0.7);
+  --card-bg: rgba(255, 255, 255, 0.1);
+  --card-border: rgba(255, 255, 255, 0.2);
+  --tech-badge-bg: rgba(255, 255, 255, 0.1);
 }
 
 .hero-section {
@@ -106,4 +112,56 @@
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
+}
+/* Add these at the top of your CSS */
+
+.light-theme {
+  --bg-color: #ffffff;
+  --text-color: #1a1a1a;
+  --navbar-bg: rgba(255, 255, 255, 0.7);
+  --card-bg: rgba(0, 0, 0, 0.05);
+  --card-border: rgba(0, 0, 0, 0.1);
+  --tech-badge-bg: rgba(0, 0, 0, 0.05);
+}
+
+/* Update existing styles to use variables */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.navbar-blur {
+  backdrop-filter: blur(10px);
+  background: var(--navbar-bg) !important;
+}
+
+.skill-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+}
+
+.tech-badge {
+  background: var(--tech-badge-bg);
+  border: 1px solid var(--neon-accent);
+}
+
+.project-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+}
+
+/* Add theme transition */
+body, .skill-card, .project-card {
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.theme-toggle {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0 15px !important;
+}
+
+.theme-toggle:hover {
+  opacity: 0.8;
 }
