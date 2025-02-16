@@ -1,0 +1,103 @@
+:root {
+  --gradient-1: #6366f1;
+  --gradient-2: #10b981;
+  --neon-accent: #14f1d9;
+}
+
+.hero-section {
+  padding: 160px 0 100px;
+  background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2));
+  background-size: 400% 400%;
+  animation: gradient-move 15s ease infinite;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes gradient-move {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.navbar-blur {
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.7) !important;
+}
+
+.skill-card {
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.skill-card:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-10px);
+}
+
+.skill-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--neon-accent);
+}
+
+.hover-transform {
+  transition: transform 0.3s ease;
+}
+
+.hover-transform:hover {
+  transform: translateY(-8px);
+}
+
+.tech-badge {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--neon-accent);
+  padding: 6px 15px;
+  border-radius: 20px;
+  margin: 5px 3px;
+  border: 1px solid var(--neon-accent);
+  font-size: 0.85em;
+}
+
+.modern-form .form-control {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  border-radius: 12px;
+  padding: 12px 20px;
+}
+
+.btn-gradient {
+  background: linear-gradient(45deg, var(--gradient-1), var(--gradient-2));
+  border: none;
+  padding: 12px 30px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.futuristic-heading {
+  font-size: 3.5rem;
+  text-shadow: 0 0 15px rgba(20, 241, 217, 0.4);
+}
+
+.section-title {
+  font-size: 2.5rem;
+  text-align: center;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: var(--neon-accent);
+}
